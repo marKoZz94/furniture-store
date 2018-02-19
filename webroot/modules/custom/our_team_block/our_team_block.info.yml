@@ -1,0 +1,6 @@
+name: Custom Block for Our Team Members
+description: Block for Team Members to appear in about us page
+package: Custom
+
+type: module
+core: 8.x

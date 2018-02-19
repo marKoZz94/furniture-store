@@ -1,0 +1,196 @@
+// ========================================
+//
+// @file _header.scss
+// Header element on the page
+//
+// ========================================
+header {
+  position: relative;
+}
+.region-header {
+  &.header-show {
+    height: 100%;
+    margin-bottom: 20%;
+    &::after {
+      display: none;
+    }
+    #block-furniture-theme-account-menu {
+      position: relative;
+      opacity: 1;
+    }
+    #block-infoblockphone {
+      position: relative;
+      opacity: 1;
+    }
+    #block-infoblockmail {
+      position: relative;
+      opacity: 1;
+    }
+  }
+
+  #block-infoblockphone {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    top: -6px;
+    .field--name-body {
+      p {
+        font-family: $font-karla;
+        font-size: 14px;
+        line-height: 18px;
+        font-style: normal;
+        color: $color-gray;
+        &::before {
+          content: '\f10b';
+          font-family: $font-awesome;
+          color: $color-gray;
+          font-size: 24px;
+          top: 4px;
+          position: relative;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+  #block-infoblockmail {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    top: -7px;
+    .field--name-body {
+      p {
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 18px;
+          font-style: normal;
+          color: $color-gray;
+          &::before {
+            content: '\f0e0';
+            font-family: $font-awesome;
+            color: $color-gray;
+            font-size: 22px;
+            top: 3px;
+            position: relative;
+            padding-right: 15px;
+          }
+          &:hover {
+            color: $color-orange;
+          }
+        }
+      }
+    }
+  }
+  #block-furniture-theme-account-menu {
+    display: inline-block;
+    position: relative;
+    float: right;
+    .account-menu-toggle {
+      display: none;
+    }
+    ul.account-menu-level-1 {
+      display: block;
+      margin: 0;
+      li {
+        display: inline-block;
+        padding: 9px;
+        a {
+          color: #707070;
+          font-size: 14px;
+          line-height: 18px;
+          font-style: normal;
+          text-transform: none;
+          font-weight: normal;
+          text-decoration: none;
+          &:hover {
+            color: $color-gray;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $screen-md-min) {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    height: 30px;
+    span.close-header {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      margin: 0 auto;
+      margin-top: 15px;
+
+      &::after {
+        content: '\f107';
+        font-family: "FontAwesome";
+        font-size: 20px;
+        top: 0;
+        right: 0;
+        color: white;
+      }
+    }
+    &.header-show {
+      margin-bottom: 20px;
+      span.close-header {
+        bottom: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        &::after {
+          content: '\f106';
+        }
+      }
+    }
+    #block-infoblockphone {
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      opacity: 0;
+    }
+    #block-infoblockmail {
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      opacity: 0;
+    }
+    #block-furniture-theme-account-menu {
+      position: absolute;
+      opacity: 0;
+      display: block;
+      width: 100%;
+      .account-menu-toggle {
+        display: block;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+      ul.account-menu-level-1 {
+        display: none;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #282828;
+        li.account-menu-item-1 {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    #block-furniture-theme-account-menu.menu-show {
+      ul.account-menu-level-1 {
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: $screen-md-min) {
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+}
+  //.region-header

@@ -1,0 +1,6 @@
+name: Custom Block for Recently Viewed Products
+description: Block for Recently Viewed Products that appears in Sidebar
+package: Custom
+
+type: module
+core: 8.x

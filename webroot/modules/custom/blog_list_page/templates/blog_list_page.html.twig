@@ -1,0 +1,51 @@
+{% for entry in content %}
+
+    <div class="wrap-blog-page">
+        <div class="block-blog-img">
+            <a href ="{{ entry.nid }}"><img src="{{ entry.image }}"/></a>
+        </div>
+        <div class="wrap-blog-text">
+        <div class="block-blog-date">
+            <p>{{ entry.field_date_blog_value }}</p>
+        </div>
+
+        <div class="like_dislike">
+            <div class="like">
+                <a href={{ like_url }}><i class="fa fa-heart-o" aria-hidden="true"></i>
+                </a>
+                <span id="like">{{ entry.likes }}</span>
+            </div>
+        </div>
+
+        <div class="block-blog-comments">
+            <a href ="{{ entry.nid }}"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                {{ entry.comment_count }}</a>
+        </div>
+
+        <div class="block-fur-title">
+            <a href ="{{ entry.nid }}">{{ entry.title }}</a>
+        </div>
+
+        <div class="block-blog-user">
+            <a href="{{ entry.uid }}"><p>{{ entry.username }}</p></a>
+        </div>
+
+    {% for en in entry.taxonomy_name %}
+        <div class="block-blog-term">
+            <a href ="{{ en.url }}"><p>{{ en.name }}</p></a>
+        </div>
+    {% endfor %}
+
+        <div class="block-blog-body">
+            <p>{{ entry.body }}</p>
+        </div>
+
+        <div class="block-blog-readmore">
+            <a href="{{ entry.nid }}">Read More</a>
+        </div>
+    </div>
+    </div>
+
+{% endfor %}
+
+

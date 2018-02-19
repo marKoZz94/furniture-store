@@ -1,0 +1,64 @@
+<div class="second-block">
+    <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">Latest</li>
+        <li class="tab-link" data-tab="tab-2">Popular</li>
+        <li class="tab-link" data-tab="tab-3">Comments</li>
+    </ul>
+    <div id="tab-1" class="tab-content current">
+
+        {% for entry in content['latest'] %}
+            <div class="wrap-blog-latest">
+
+                <div class="block-blog-img">
+                    <a href ="{{ entry.alias }}"><img src="{{ entry.image }}"/></a>
+                </div>
+
+                <div class="block-blog-title">
+                    <a href ="{{ entry.alias }}">{{ entry.title }}</a>
+                </div>
+
+                <div class="block-blog-date">
+                    <p>{{ entry.date }}</p>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+    <div id="tab-2" class="tab-content">
+        {% for entry in content['popular'] %}
+            <div class="wrap-blog-latest">
+
+                <div class="block-blog-img">
+                    <a href ="{{ entry.alias }}"><img src="{{ entry.image }}"/></a>
+                </div>
+
+                <div class="block-blog-title">
+                    <a href ="{{ entry.alias }}">{{ entry.title }}</a>
+                </div>
+
+                <div class="block-blog-date">
+                    <p>{{ entry.date }}</p>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+    <div id="tab-3" class="tab-content">
+        {% for entry in content['comments'] %}
+            <div class="wrap-comments">
+            <div class="block-blog-c-name">
+                <p>{{ entry.name }}</p>
+            </div>
+
+            <div class="block-blog-title">
+                <p><a href ="{{ entry.alias }}">{{ entry.title }}</a> ({{ entry.created }} ago)</p>
+            </div>
+
+            <div class="block-blog-commment">
+                <p>{{ entry.comment }}</p>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+

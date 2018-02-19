@@ -1,0 +1,13 @@
+<?php
+
+function breadcrumb_member_profile_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'breadcrumb_member_profile' => array(
+            'template'  => 'breadcrumb_member_profile',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

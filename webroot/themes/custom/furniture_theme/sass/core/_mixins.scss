@@ -1,0 +1,342 @@
+// ========================================
+//
+// @file _mixins.scss
+// File containing all Sass mixins
+//
+// ========================================
+
+// - - Output property and value in rem with px fallback
+@mixin rem($property, $values) {
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == 0px {
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+
+// - - Clearfix
+@mixin clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// - - Image for retina
+@mixin image-2x ($image, $width, $height) {
+	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+		background-image: url($image);
+		background-size: $width $height;
+	}
+}
+
+// - - CSS calc function
+@mixin calc ($property, $expression) {
+	#{$property}: calc(#{$expression});
+}
+
+// - - Placeholder color
+@mixin placeholder ($color, $opacity: 1) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-moz-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-moz-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+		opacity: $opacity;
+	}
+}
+// - - a link style and hover effect
+@mixin link-style {
+  font-family: $font-karla;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  color: $more-light-gray;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+// - - style for social font icons
+@mixin social {
+  ul {
+    display: block;
+    width: 220px;
+    margin-top: 20px;
+    &::before {
+      content: 'Share It:';
+      display: inline-block;
+      font-size: 15px;
+      color: $color-black;
+    }
+    li {
+      display: inline-block;
+      a {
+        span.linkicon__icon {
+          color: #9b9b9b;
+          font-size: 15px;
+          &:hover {
+            color: $color-orange;
+          }
+        }
+        span.linkicon__text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// - - Style for footer menu blocks
+@mixin footer-menu {
+  nav {
+    width: 24%;
+    display: inline-block;
+    padding: 0 20px;
+    @media screen and (max-width: $screen-lg-min) {
+      width: 49%;
+    }
+    @media screen and (max-width: $screen-sm-min) {
+      width: 98%;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: normal;
+      font-style: normal;
+      color: white;
+    }
+    ul.menu {
+      margin: 0;
+      li {
+        border-bottom: 1px solid #333333;
+        display: block;
+        position: relative;
+        &::before {
+          content: '';
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          margin: auto !important;
+          position: absolute;
+          left: auto;
+          right: 0;
+          top: 10px;
+          background-color: #333333;
+        }
+        a {
+          color: #707070;
+          transition: color 0.3s ease-in-out;
+          font-size: 15px;
+          line-height: 22px;
+          font-weight: normal;
+          font-style: normal;
+          text-decoration: none;
+          &:hover {
+            color: $color-orange;
+          }
+        }
+      }
+    }
+  }
+}
+// - - Style for a link in Next/Previous block
+@mixin prev {
+  display: inline-block;
+  position: relative;
+  float: left;
+  clear: left;
+  padding-left: 70px;
+  color: #888888;
+  font-size: 15px;
+  text-decoration: none;
+  &::before {
+    content: '\f104';
+    font-family: $font-awesome;
+    font-size: 18px;
+    color: #888888;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 0;
+    padding: 14px 17px;
+    border: 1px solid #e6e6e6;
+    margin: 3px;
+    @media screen and (max-width: $screen-xs-min){
+      top: -50px;
+      left: 44%;
+    }
+  }
+  &:hover::before {
+    color: $color-orange;
+
+  }
+  span {
+    display: block;
+    color: $color-black;
+    font-family: $font-karla;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $color-orange;
+    }
+  }
+  @media screen and (max-width: $screen-sm-min) {
+    width: 100%;
+  }
+  @media screen and (max-width: $screen-xs-min){
+    text-align: center;
+    padding-left: 0;
+  }
+}
+@mixin next {
+  display: inline-block;
+  float: right;
+  clear: right;
+  text-align: right;
+  padding-right: 70px;
+  color: #888888;
+  font-size: 15px;
+  text-decoration: none;
+  &::before {
+  content: '\f105';
+  color: #888888;
+    font-family: $font-awesome;
+    font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  right: 0;
+  padding: 12px 18px;
+  border: 1px solid #e6e6e6;
+  margin: 3px;
+    @media screen and (max-width: $screen-xs-min){
+      top: 60px;
+      left: 44%;
+    }
+}
+  &:hover::before {
+    color: $color-orange;
+
+  }
+  span {
+    display: block;
+    color: $color-black;
+    font-family: $font-karla;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $color-orange;
+    }
+  }
+  @media screen and (max-width: $screen-sm-min) {
+    width: 100%;
+  }
+  @media screen and (max-width: $screen-xs-min){
+    text-align: center;
+    padding-right: 0;
+    padding-top: 70px;
+  }
+}
+// - - Style for submit button on comment forms
+@mixin  submit_button {
+  input {
+    display: block;
+    width: 180px;
+    height: 48px;
+    background-color: $color-black;
+    transition: all .3s ease-in-out;
+    border: none;
+    color: white;
+    font-size: 15px;
+    line-height: 46px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: $font-karla;
+    &:hover {
+      background-color: #e6ae48;
+    }
+  }
+}
+// - - Style for button on mosaic block on homepage
+@mixin  mosaic_button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  a {
+    font-family: $font-karla;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    color: #252324;
+    padding: 20px 40px;
+    background-color: white;
+    line-height: 60px;
+    transition: all .3s ease-in-out;
+    white-space: nowrap;
+    &:hover {
+      background-color: #e6ae48;
+      color: white;
+    }
+  }
+}

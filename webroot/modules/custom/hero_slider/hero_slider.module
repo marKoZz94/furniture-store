@@ -1,0 +1,13 @@
+<?php
+
+function hero_slider_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'hero_slider' => array(
+            'template'  => 'hero_slider',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

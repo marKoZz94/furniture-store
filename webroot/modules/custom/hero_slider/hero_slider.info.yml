@@ -1,0 +1,6 @@
+name: Custom Block for Hero Slider
+description: Block for Hero Slider that appears on Home Page
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+        {# 1 menu level#}
+        {% if menu_level == 0 %}
+            <div class="menu-toggle">
+                <span id="first" class="fa fa-heart-o"></span>
+                <span id="first" class="fa fa-shopping-bag"></span>
+                <span id="first" class="fa fa-search"></span>
+                <span id="last" class="fa fa-bars"></span>
+            </div>
+            <ul{{ attributes.addClass('menu-level-1') }}>
+        {% else %}
+
+            {# 2 menu level #}
+            {% if menu_level == 1 %}
+                <ul{{ attributes.addClass('menu-level-2').removeClass('menu-level-1') }}>
+            {% endif %}
+
+            {# 3 menu level #}
+            {% if menu_level == 2 %}
+                <ul{{ attributes.addClass('menu-level-3').removeClass('menu-level-1', 'menu-level-2') }}>
+            {% endif %}
+
+        {% endif %}
+        {% for item in items %}
+            {# 1 menu level item #}
+            {% if menu_level == 0 %}
+                <li{{ item.attributes.addClass('menu-item-1') }}>
+                {{ link(item.title, item.url, { 'class':['menu-link-1']}) }}
+            {% endif %}
+
+            {# 2 menu level item #}
+            {% if menu_level == 1 %}
+                <li{{ item.attributes.addClass('menu-item-2') }}>
+                {{ link(item.title, item.url, { 'class':['menu-link-2']}) }}
+            {% endif %}
+
+            {# 3 level menu level item #}
+            {% if menu_level == 2 %}
+                <li{{ item.attributes.addClass('menu-item-3') }}>
+                {{ link(item.title, item.url, {'class':['menu-link-3']}) }}
+            {% endif %}
+
+            {# menu li/a depth #}
+            {% if item.below %}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

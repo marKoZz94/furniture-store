@@ -1,0 +1,13 @@
+<?php
+
+function latest_from_blog_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'latest_from_blog' => array(
+            'template'  => 'latest_from_blog',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

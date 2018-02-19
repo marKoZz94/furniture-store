@@ -1,0 +1,229 @@
+// ========================================
+//
+// @file _login-reg.scss
+// Login and registration page
+//
+// ========================================
+
+body.path-user {
+  .region-content {
+    min-height: 900px;
+  }
+  .block-user-login-block {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    padding: 0 10px;
+    h2 {
+      font-family: $font-karla;
+      color: $color-black;
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: normal;
+      font-style: normal;
+      text-transform: none;
+      margin-top: 0;
+    }
+    form {
+      .form-item-pass,
+      .form-item-name {
+        display: block;
+        label {
+          display: block;
+          padding-bottom: 5px;
+          font-family: $font-arial;
+          color: #888888;
+          font-size: 15px;
+          line-height: 22px;
+          font-weight: normal;
+          font-style: normal;
+          &::after {
+            content: '*';
+            font-size: 20px;
+            color: $color-orange;
+            background-image: none;
+            position: absolute;
+          }
+        }
+        input {
+          display: block;
+          transition: all .2s ease-in-out;
+          height: 42px;
+          padding: 11px 10px 9px 10px;
+          width: 100%;
+          border: 1px solid #e6e6e6;
+          background-color: white!important;
+        }
+        input:focus {
+          outline: none;
+          border: 2px solid $color-orange;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 30px white inset;
+          -webkit-text-fill-color: #888888;
+          font-family:$font-arial;
+          font-size: 14px;
+        }
+      }
+      .form-item-remember {
+        display: inline-block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        label {
+          font-family: $font-arial;
+          font-size: 15px;
+          line-height: 22px;
+          font-weight: normal;
+          font-style: normal;
+          color: #888888;
+        }
+      }
+      #edit-actions--2 {
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 40%;
+        input {
+          transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+          color: white;
+          background-color: $color-black;
+          padding: 15px 31px;
+          border: none;
+          font-family: $font-karla;
+          font-size: 15px;
+          &:hover {
+            background-color: $color-orange;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .item-list {
+      ul {
+        list-style: none;
+        li:first-child {
+          display: none;
+        }
+        li {
+          display: inline-block;
+          margin: 0;
+          a {
+            color: white;
+            display: block;
+            position: relative;
+            &::after {
+              content: 'Lost your password?';
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-family: $font-arial;
+              font-size: 15px;
+              line-height: 22px;
+              font-weight: normal;
+              color: $color-orange;
+            }
+            &:hover {
+              &::after {
+                color: #9b9b9b;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+    }
+  }
+  #block-furniture-theme-content {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 48%;
+    padding: 0 10px;
+    form {
+      #edit-account {
+        .form-item-name,
+        .form-item-mail {
+          display: block;
+          label {
+            display: block;
+            padding-bottom: 5px;
+            font-family: $font-arial;
+            color: #888888;
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: normal;
+            font-style: normal;
+            &::after {
+              content: '*';
+              font-size: 20px;
+              color: $color-orange;
+              background-image: none;
+              position: absolute;
+            }
+          }
+          input {
+            display: block;
+            transition: all .2s ease-in-out;
+            height: 42px;
+            padding: 11px 10px 9px 10px;
+            width: 100%;
+            border: 1px solid #e6e6e6;
+            background-color: white!important;
+          }
+          input[type='text'],
+          input[type='email'] {
+            font-family:$font-arial;
+            font-size: 14px;
+            color: #888888;
+          }
+          input:focus {
+            outline: none;
+            border: 2px solid $color-orange;
+          }
+        }
+      }
+      #edit-actions {
+        display: block;
+        padding-top: 15px;
+        input {
+          transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+          color: white;
+          background-color: $color-black;
+          padding: 15px 31px;
+          border: none;
+          font-family: $font-karla;
+          font-size: 15px;
+          &:hover {
+            background-color: $color-orange;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    &::before {
+      content: 'Register';
+      display: block;
+      width: 100%;
+      font-family: $font-karla;
+      color: $color-black;
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: normal;
+      font-style: normal;
+      text-transform: none;
+      margin-top: 0;
+      padding-bottom: 9px;
+    }
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+    }
+  }
+}

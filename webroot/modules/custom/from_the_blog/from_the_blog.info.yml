@@ -1,0 +1,6 @@
+name: Custom Block for From The Blog Slider on Home Page
+description: Block for From The Blog Slider that appears in Home Page
+package: Custom
+
+type: module
+core: 8.x

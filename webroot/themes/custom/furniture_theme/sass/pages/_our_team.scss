@@ -1,0 +1,142 @@
+// ========================================
+//
+// @file our_team.scss
+// Our team node pages specific styling
+//
+// ========================================
+.our-team-wrapper {
+  display: block;
+  width: 100%;
+  .block-left {
+    display: inline-block;
+    width: 65%;
+    .field--name-body {
+      padding-bottom: 55px;
+      p {
+        color: $font-color;
+        font-family: $font-arial;
+      }
+    }
+    @media screen and (max-width: $screen-md-min) {
+      width: 100%;
+      float: none;
+      .field--name-field-profile-image {
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .block-right {
+    display: inline-block;
+    width: 30%;
+    float: right;
+    clear: right;
+    padding: 30px 25px;
+    border: 2px solid #e6ae48;
+    h3 {
+      font-family: $font-karla;
+      margin-top: 0px;
+      font-size: 22px;
+      line-height: 28px;
+      font-weight: normal;
+      color: $color-black;
+    }
+    .field--name-field-address {
+      font-family: $font-karla;
+      font-size: 14px;
+      word-wrap: break-word;
+      text-align: right;
+      overflow: hidden;
+      color: $color-black;
+      padding: 10px 0px;
+      border-bottom: 1px solid #e6e6e6;
+      .field__label {
+        color: $font-color;
+        font-weight: normal;
+      }
+    }
+    .field--name-field-phone {
+      font-family: $font-karla;
+      font-size: 14px;
+      word-wrap: break-word;
+      text-align: right;
+      overflow: hidden;
+      color: $color-black;
+      padding: 10px 0px;
+      border-bottom: 1px solid #e6e6e6;
+      .field__label {
+        color: $font-color;
+        font-weight: normal;
+      }
+    }
+    .field--name-field-email {
+      font-family: $font-karla;
+      font-size: 14px;
+      word-wrap: break-word;
+      text-align: right;
+      overflow: hidden;
+      padding: 10px 0px;
+      border-bottom: 1px solid #e6e6e6;
+      .field__label {
+        color: $font-color;
+        font-weight: normal;
+      }
+      .field__item {
+        a {
+          font-family: $font-karla;
+          text-decoration: none;
+          color: $color-black;
+          font-weight: normal;
+          cursor: default;
+        }
+      }
+    }
+    .field--name-field-profile-categories {
+      font-size: 14px;
+      font-family: $font-karla;
+      word-wrap: break-word;
+      text-align: right;
+      overflow: hidden;
+      padding: 10px 0px;
+      .field__label {
+        color: $font-color;
+        font-weight: normal;
+      }
+      .field__item {
+        a {
+          text-decoration: none;
+          color: $color-black;
+          font-weight: normal;
+          &:hover {
+            color: $font-color;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $screen-md-min) {
+      display: block;
+      width: 100%;
+      float: none;
+    }
+  }
+}
+#block-nextpreviousourteamblock {
+  display: block;
+  width: 100%;
+  min-height: 55px;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  a.prev {
+    @include prev;
+  }
+  a.next {
+    @include next;
+  }
+  @media screen and (max-width: $screen-xs-min){
+    margin-top: 75px;
+    margin-bottom: 60px;
+    height: 180px;
+  }
+}

@@ -1,0 +1,6 @@
+name: Custom Block for Latest From Blog
+description: Block for Latest From Blog that appears in sidebar
+package: Custom
+
+type: module
+core: 8.x

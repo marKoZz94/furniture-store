@@ -1,0 +1,19 @@
+name: Portfolio
+type: module
+core: 8.x
+dependencies:
+  - blog
+  - datetime
+  - field
+  - field_group
+  - file
+  - image
+  - link
+  - linkicon
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x-1.0

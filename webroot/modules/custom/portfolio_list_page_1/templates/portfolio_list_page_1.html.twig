@@ -1,0 +1,18 @@
+{% for entry in content %}
+    <div class="wrap-portfolio-page">
+        <div class="block-portfolio-img">
+            <a href ="{{ entry.alias }}"><img src="{{ entry.image }}"/><span class="hover-button"><span class="plus"><span class="vertical"></span><span class="horizontal"></span></span></span></a>
+        </div>
+
+        <div class="block-portfolio-title">
+            <a href ="{{ entry.alias }}">{{ entry.title }}</a>
+        </div>
+
+        <div class="block-portfolio-term">
+            <p>in <a href ="{{ entry.alias2 }}">{{ entry.taxonomy_name.name }}</p></a>
+        </div>
+    </div>
+
+{% endfor %}
+
+

@@ -1,0 +1,6 @@
+name: Deploy modules on Pantheon
+description: Installing modules
+package: Custom
+
+type: module
+core: 8.x

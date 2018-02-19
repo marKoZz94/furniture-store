@@ -1,0 +1,6 @@
+name: Custom Next and Previous Block for Blog
+description: Block for Next and Previous Content
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,6 @@
+name: Custom Block for Top Rated Products on Furniture Page
+description: Block for Top Rated Products that appears in Sidebar on Furniture Page
+package: Custom
+
+type: module
+core: 8.x

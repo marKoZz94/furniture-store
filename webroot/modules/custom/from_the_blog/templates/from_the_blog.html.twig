@@ -1,0 +1,19 @@
+{% for entry in content %}
+    <li class="blog-slide">
+    <div class="block-blog-wrap">
+        <div class="block-blog-img">
+            <a href ="{{ entry.alias }}"><img src="{{ entry.image }}"/><span class="hover-button"><span class="plus"><span class="vertical"></span><span class="horizontal"></span></span></span></a>
+        </div>
+
+        <div class="block-blog-date">
+            <p>{{ entry.date }}</p>
+        </div>
+
+        <div class="block-fur-title">
+            <a href ="{{ entry.alias }}">{{ entry.title }}</a>
+        </div>
+
+    </div>
+    </li>
+
+{% endfor %}

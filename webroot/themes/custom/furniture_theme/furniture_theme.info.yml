@@ -1,0 +1,32 @@
+# Theme information
+name: Furniture theme
+type: theme
+base theme: classy
+description: Drupal theme files to quickly kickstart a new theme development.
+core: 8.x
+version: 1.x
+
+# Include libraries
+libraries:
+  - furniture_theme/global-css
+  - furniture_theme/global-js
+
+# Regions
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  breadcrumb: 'Breadcrumb'
+  team_title: 'Team title region'
+  mozaik_front: 'Region for mozaik front page'
+  contact_map: 'Contact map region'
+  content: 'Content'
+  sidebar_first: 'Sidebar-first'
+  parallax_reg: 'Parallax region'
+  slider_front: 'Slider on front page'
+  come_visit: 'Come Visit Us Today'
+  member_get_more: 'Member Get More'
+  favorite_furniture: 'Favorite furniture'
+  in_the_press: 'In the press'
+  subscribe_region: 'Subscribe region'
+  footer: 'Footer'
+  bottom: 'Bottom'

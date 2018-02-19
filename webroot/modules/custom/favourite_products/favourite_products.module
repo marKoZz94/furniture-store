@@ -1,0 +1,13 @@
+<?php
+
+function favourite_products_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'favourite_products' => array(
+            'template'  => 'favourite_products',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

@@ -1,0 +1,13 @@
+<?php
+
+function from_the_blog_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'from_the_blog' => array(
+            'template'  => 'from_the_blog',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.furniture.body
+    - field.field.node.furniture.field_categories
+    - field.field.node.furniture.field_desc
+    - field.field.node.furniture.field_furniture_image
+    - field.field.node.furniture.field_price
+    - field.field.node.furniture.field_related_products
+    - field.field.node.furniture.field_reviews
+    - field.field.node.furniture.field_share_it_links
+    - node.type.furniture
+  module:
+    - text
+    - user
+id: node.furniture.teaser
+targetEntityType: node
+bundle: furniture
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_categories: true
+  field_desc: true
+  field_furniture_image: true
+  field_price: true
+  field_related_products: true
+  field_reviews: true
+  field_share_it_links: true

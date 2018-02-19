@@ -1,0 +1,7 @@
+search_page.search_form:
+  path: '/shop'
+  defaults:
+    _form: '\Drupal\search_page\Form\SearchForm'
+    _title: 'Product Archive'
+  requirements:
+    _access: 'TRUE'

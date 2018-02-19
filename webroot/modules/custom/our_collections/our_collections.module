@@ -1,0 +1,13 @@
+<?php
+
+function our_collections_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'our_collections' => array(
+            'template'  => 'our_collections',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

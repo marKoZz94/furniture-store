@@ -1,0 +1,13 @@
+<?php
+
+function blog_list_page_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'blog_list_page' => array(
+            'template'  => 'blog_list_page',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

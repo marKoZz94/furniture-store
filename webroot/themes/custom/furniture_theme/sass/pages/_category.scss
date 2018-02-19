@@ -1,0 +1,129 @@
+// ========================================
+//
+// @file _category.scss
+// Style for category list page
+//
+// ========================================
+body.path-furniture {
+  form#furniture-list-form {
+    .filter {
+      display: inline-block;
+      .form-item-sort {
+        display: inline-block;
+        margin-top: 0;
+        select {
+          background-color: white;
+          padding: 4% 10%;
+          color: #888888;
+          font-family: $font-arial;
+          font-size: 15px;
+        }
+      }
+    }
+    .button {
+      display: inline-block;
+      vertical-align: top;
+      input {
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background-color: $color-black;
+        transition: all .3s ease-in-out;
+        border: none;
+        color: white;
+        font-size: 15px;
+        line-height: 42px;
+        font-weight: normal;
+        font-style: normal;
+        font-family: "Karla", sans-serif;
+        margin-right: 10px;
+        &:hover {
+          background-color: $color-orange;
+        }
+      }
+      h2 {
+        display: inline-block;
+        margin-top: 5px;
+        float: right;
+        clear: right;
+      }
+    }
+    //.col-md-4 {
+    //  display: inline-block;
+    //  vertical-align: top;
+    //  text-align: center;
+    //  .block-fur-term {
+    //    display: inline-block;
+    //    a {
+    //      color: #888888;
+    //      text-decoration: none;
+    //      font-size: 15px;
+    //      line-height: 22px;
+    //      &:hover {
+    //        color: $color-orange;
+    //      }
+    //    }
+    //  }
+    //  .block-fur-title {
+    //    h2 {
+    //      font-size: 18px;
+    //      line-height: 24px;
+    //      font-weight: normal;
+    //      color: $color-black;
+    //      text-align: center;
+    //      a {
+    //        white-space: nowrap;
+    //        text-decoration: none;
+    //        border-bottom: 1px solid transparent;
+    //        &:hover {
+    //          border-bottom: 1px solid $color-orange;
+    //        }
+    //      }
+    //    }
+    //  }
+    //  .block-fur-price {
+    //    p {
+    //      font-size: 18px;
+    //      line-height: 24px;
+    //      color: #888888;
+    //      padding: 20px 0;
+    //    }
+    //  }
+    //}
+    //nav.pager {
+    //  text-align: center;
+    //  ul {
+    //    display: inline-block;
+    //    padding: 0;
+    //    margin: 0;
+    //    li {
+    //      display: block;
+    //      margin: 0;
+    //      padding: 1px 3px;
+    //      float: left;
+    //      a {
+    //        color: white;
+    //        border-color: $color-orange;
+    //        line-height: 31px !important;
+    //        display: block;
+    //        min-width: 32px;
+    //        height: 32px;
+    //        position: relative;
+    //        border-width: 1px;
+    //        border-style: solid;
+    //        -webkit-border-radius: 50%;
+    //        border-radius: 50%;
+    //        background-color: $color-orange;
+    //        text-decoration: none;
+    //        font-family: $font-arial;
+    //        span:last-child {
+    //          opacity: 0;
+    //          width: 15px;
+    //          height: 15px;
+    //        }
+    //      }
+    //    }
+    //  }
+    //}
+  }
+}

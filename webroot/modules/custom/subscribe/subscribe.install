@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Creates some default entries on this module custom table.
+ *
+ * @see hook_install()
+ *
+ * @ingroup lotus
+ */
+function uploadForm_install() {
+
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup lotus
+ */
+function subscribe_schema() {
+
+    $schema['subscribe'] = array(
+        'description' => 'Email address book.',
+        'fields' => array(
+            'pid' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique person ID.',
+            ),
+            'uid' => array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0,
+                'description' => "Creator user's {users}.uid",
+            ),
+
+
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Email of the person.',
+            ),
+            'date' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Date when subscribed.',
+            ),
+
+        ),
+        'primary key' => array('pid'),
+        'indexes' => array(
+            'email' => array('email'),
+            'date' => array('date'),
+        ),
+    );
+
+
+    return $schema;
+}

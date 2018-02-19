@@ -1,0 +1,6 @@
+name: Custom Block for Our Collections on Home Page
+description: Block for Our Collections that appears in Home Page
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,6 @@
+name: Custom Block for Favourite Products
+description: Block for Favourite Products to appear in about us page
+package: Custom
+
+type: module
+core: 8.x

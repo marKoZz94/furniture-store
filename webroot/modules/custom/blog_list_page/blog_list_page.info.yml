@@ -1,0 +1,6 @@
+name: Custom Block for Blog List Page
+description: Block for Blog List Page that appears in Blog
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,13 @@
+<?php
+
+function top_rated_products_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'top_rated_products' => array(
+            'template'  => 'top_rated_products',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

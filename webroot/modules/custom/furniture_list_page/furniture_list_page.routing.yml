@@ -1,0 +1,8 @@
+
+furniture_list_page.search_form:
+  path: '/furniture'
+  defaults:
+    _form: '\Drupal\furniture_list_page\Form\SearchForm'
+    _title: 'All Products'
+  requirements:
+    _access: 'TRUE'

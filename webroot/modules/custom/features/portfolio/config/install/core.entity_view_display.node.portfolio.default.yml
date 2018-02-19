@@ -1,0 +1,121 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_author
+    - field.field.node.portfolio.field_date_project
+    - field.field.node.portfolio.field_more
+    - field.field.node.portfolio.field_p_categories
+    - field.field.node.portfolio.field_po
+    - field.field.node.portfolio.field_share_it_links
+    - node.type.portfolio
+  module:
+    - datetime
+    - field_group
+    - image
+    - linkicon
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_pro:
+      children:
+        - field_author
+        - field_date_project
+        - field_p_categories
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+      label: 'Project Details'
+      region: content
+id: node.portfolio.default
+targetEntityType: node
+bundle: portfolio
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_author:
+    weight: 8
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_date_project:
+    weight: 9
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_more:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_p_categories:
+    weight: 10
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_po:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_share_it_links:
+    weight: 4
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      linkicon_prefix: icon
+      linkicon_wrapper_class: ''
+      linkicon_load: false
+      linkicon_vertical: false
+      linkicon_style: ''
+      linkicon_color: ''
+      linkicon_tooltip: false
+      linkicon_maxlength: 60
+      linkicon_no_text: false
+      linkicon_position: ''
+      linkicon_link: false
+      linkicon_global_title: ''
+      linkicon_size: ''
+      linkicon_bundle: ''
+    third_party_settings: {  }
+    type: linkicon
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

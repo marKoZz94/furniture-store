@@ -1,0 +1,24 @@
+// ========================================
+//
+// @file _footer.scss
+// Footer element on the page
+//
+// ========================================
+
+footer {
+  width: 100%;
+  background-color: $color-black;
+  border-bottom: 1px solid $color-gray;
+    .region-footer {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      min-height: 270px;
+      padding-top: 50px;
+      margin-bottom: 70px;
+      @include footer-menu;
+      @media screen and (max-width: $screen-lg-min) {
+        width: 100%;
+      }
+    }
+}

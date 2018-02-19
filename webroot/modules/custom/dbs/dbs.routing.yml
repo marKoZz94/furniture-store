@@ -1,0 +1,15 @@
+dbs.node:
+  path: '/admin/dbs/node'
+  defaults:
+    _title: 'Database Entity Search'
+    _form: '\Drupal\dbs\Form\DBSNodeForm'
+  requirements:
+    _permission: 'access content'
+
+dbs.taxonomy:
+  path: '/admin/dbs/taxonomy'
+  defaults:
+    _form: '\Drupal\dbs\Form\DBSTaxonomyForm'
+    _title: 'Database Entity Search'
+  requirements:
+    _permission: 'access content'

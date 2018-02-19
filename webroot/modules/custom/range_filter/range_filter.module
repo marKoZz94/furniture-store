@@ -1,0 +1,10 @@
+<?php
+
+function range_filter_theme ( $existing, $type, $theme, $path ) {
+  return [
+      'range_filter' => array(
+          'render element' => 'form'
+      ),
+
+  ];
+}

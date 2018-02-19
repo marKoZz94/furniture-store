@@ -1,0 +1,189 @@
+<?php
+/**
+ * Deploy module
+ *
+*/
+
+/**
+ * Favourite Products Block
+ */
+function deploy_update_8422()
+{
+    \Drupal::service('module_installer')->install(['favourite_products']);
+}
+
+/**
+ * Breadcrumb Member Profile Block
+ */
+function deploy_update_8423()
+{
+    \Drupal::service('module_installer')->install(['breadcrumb_member_profile']);
+}
+
+/**
+ * Our Collections Block
+ */
+function deploy_update_8424()
+{
+    \Drupal::service('module_installer')->install(['our_collections']);
+}
+
+/**
+ * Fivestar Module
+ */
+function deploy_update_8425()
+{
+    \Drupal::service('module_installer')->install(['fivestar']);
+}
+
+/**
+ * Voting Api Module
+ */
+function deploy_update_8426()
+{
+    \Drupal::service('module_installer')->install(['votingapi']);
+}
+
+/**
+ * Portfolio List Page
+ */
+function deploy_update_8427()
+{
+    \Drupal::service('module_installer')->install(['portfolio_list_page_1']);
+}
+
+/**
+ * Top Rated Products Sidebar Block
+ */
+function deploy_update_8428()
+{
+    \Drupal::service('module_installer')->install(['top_rated_products']);
+}
+
+/**
+ * Blog List Page
+ */
+function deploy_update_8429()
+{
+    \Drupal::service('module_installer')->install(['blog_list_page']);
+}
+
+/**
+ * From The Blog
+ */
+function deploy_update_8430()
+{
+    \Drupal::service('module_installer')->install(['from_the_blog']);
+}
+
+/**
+ * Paragraphs
+ */
+function deploy_update_8431()
+{
+    \Drupal::service('module_installer')->install(['paragraphs']);
+}
+
+/**
+ * Entity Reference Revisions
+ */
+function deploy_update_8432()
+{
+    \Drupal::service('module_installer')->install(['entity_reference_revisions']);
+}
+
+/**
+ * Subscribe
+ */
+function deploy_update_8433()
+{
+    \Drupal::service('module_installer')->install(['subscribe']);
+}
+
+/**
+ * Top Rated Products
+ */
+function deploy_update_8434()
+{
+    \Drupal::service('module_installer')->install(['top_rated_products']);
+}
+
+/**
+ * Search Page
+ */
+function deploy_update_8435()
+{
+    \Drupal::service('module_installer')->install(['search_page']);
+}
+
+/**
+ * Furniture List Page
+ */
+function deploy_update_8436()
+{
+    \Drupal::service('module_installer')->install(['furniture_list_page']);
+}
+
+/**
+ * Easy Breadcrumbs
+ */
+function deploy_update_8437()
+{
+    \Drupal::service('module_installer')->install(['easy_breadcrumb']);
+}
+
+/**
+ * Latest From Blog
+ */
+function deploy_update_8438()
+{
+    \Drupal::service('module_installer')->install(['latest_from_blog']);
+}
+
+///**
+// * Like Dislike
+// */
+//function deploy_update_8439()
+//{
+//    \Drupal::service('module_installer')->install(['like_dislike']);
+//}
+//
+///**
+// * Like Dislike Fix
+// */
+//function deploy_update_8440()
+//{
+//    \Drupal::service('module_installer')->install(['like_dislike']);
+//}
+
+/**
+ * Range Filter
+ */
+function deploy_update_8441()
+{
+    \Drupal::service('module_installer')->install(['range_filter']);
+}
+
+/**
+ * Like Counter
+ */
+function deploy_update_8442()
+{
+    \Drupal::service('module_installer')->install(['like']);
+}
+
+/**
+ * Recently Viewed Products
+ */
+function deploy_update_8443()
+{
+    \Drupal::service('module_installer')->install(['recently_viewed_products']);
+}
+
+/**
+ * Hero Slider
+ */
+function deploy_update_8444()
+{
+    \Drupal::service('module_installer')->install(['hero_slider']);
+}

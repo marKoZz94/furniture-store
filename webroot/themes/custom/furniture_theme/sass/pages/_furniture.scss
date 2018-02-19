@@ -1,0 +1,715 @@
+// ========================================
+//
+// @file furniture.scss
+// Furniture node pages specific styling
+//
+// ========================================
+.node--type-furniture {
+  position: initial;
+  .first-block {
+    display: block;
+    position: relative;
+    width: 100%;
+    .first-left-block {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      .gallery {
+        #slider {
+          margin-bottom: 0;
+          .flex-direction-nav {
+            display: none;
+          }
+          ul {
+            li#container {
+              width: 300px; /* size of the small image */
+              margin: auto; /* position in center of the page */
+              position: relative;
+              cursor: pointer;
+              img.image-style-furniture-default-img {
+                display: block;
+              }
+              .magnifier {
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                top: 0;
+                display: none; /* hidden at startup */
+              }
+            }
+          }
+        }
+        .flexslider {
+          position: initial;
+        }
+        .magnifier {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        #carousel {
+          ul {
+            li {
+              //margin-left: 5%;
+            }
+          }
+        }
+        @media screen and (max-width: $screen-sm) {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+    .first-right-block {
+      display: inline-block;
+      width: 45%;
+      margin-left: 3%;
+      h2 {
+        margin-top: 0;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e6e6e6;
+        a {
+          text-decoration: none;
+          font-size: 32px;
+          line-height: 38px;
+          color: $color-black;
+        }
+      }
+      .price-and-stars {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e6e6e6;
+        clear: both;
+        .field--name-field-price {
+          display: inline-block;
+          vertical-align: top;
+          font-size: 22px;
+          line-height: 28px;
+          color: $color-black;
+        }
+        .stars {
+          display: inline-block;
+          float: right;
+          clear: right;
+          padding-top: 5px;
+        }
+      }
+      .field--name-body {
+        color: #888888;
+        font-size: 15px;
+        line-height: 22px;
+        padding-bottom: 20px;
+      }
+      .field--name-field-categories {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #e6e6e6;
+        .field__label {
+          color: $color-black;
+          font-size: 15px;
+          line-height: 22px;
+          font-weight: normal;
+        }
+        .field__items {
+          .field__item {
+            display: inline-block;
+            padding-right: 5px;
+            a {
+              color: #9b9b9b;
+              font-size: 15px;
+              line-height: 22px;
+              text-decoration: none;
+              &:hover {
+                color: #e6ae48;
+              }
+            }
+          }
+        }
+      }
+      .item-list--linkicon {
+        padding-bottom: 25px;
+      }
+      @media screen and (max-width: $screen-sm){
+        width: 95%;
+        margin-right: 3%;
+      }
+    }
+  }
+  .second-block {
+    width: 100%;
+    ul.tabs {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      display: block;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #e6e6e6;
+      li {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: normal;
+        background: none;
+        color: $color-black;
+        display: inline-block;
+        padding: 10px 15px;
+        cursor: pointer;
+        &.current {
+          border-bottom: 1px solid #e6ae48;
+        }
+      }
+    }
+    .tab-content {
+      display: none;
+      padding: 15px;
+      &.current {
+        display: inherit;
+      }
+      .field--name-field-desc {
+        color: #888888;
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: normal;
+        .field__label {
+          display: none;
+        }
+      }
+      .field--name-field-materials {
+        padding-bottom: 14px;
+        padding-top: 30px;
+        border-bottom: 1px solid #e6e6e6;
+        .field__label {
+          color: $color-black;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          padding-right: 50px;
+        }
+        .field__item {
+          color: #888888;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      .field--name-field-color {
+        padding-bottom: 14px;
+        padding-top: 14px;
+        border-bottom: 1px solid #e6e6e6;
+        .field__label {
+          color: $color-black;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          padding-right: 50px;
+        }
+        .field__item {
+          color: #888888;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    #tab-3 {
+      article.comment {
+        display: block;
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom: 20px;
+        footer.comment__meta {
+          background-color: white;
+          border-bottom: none;
+          article.profile {
+            display: inline-block;
+            a {
+              img{
+                border-radius: 50%;
+              }
+            }
+          }
+          p.comment__submitted {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 2px;
+            font-family: $font-karla;
+            font-size: 13px;
+            color: $font-color;
+            a {
+              font-family: $font-karla;
+              font-size: 18px;
+              color: $color-black;
+              text-decoration: none;
+            }
+          }
+        }
+        footer.comment__meta>a {
+          display: none;
+        }
+        .content {
+          h3 {
+            display: none;
+          }
+          ul {
+            display: block;
+            text-align: right;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 0;
+            li {
+              a {
+                font-family: $font-arial;
+                font-size: 15px;
+                color: $color-orange;
+                text-decoration: none;
+                &:hover {
+                  color: $font-color;
+                }
+              }
+            }
+          }
+          .field--name-field-your-rating {
+            display: block;
+            text-align: right;
+            position: absolute;
+            top: 25%;
+            right: 0;
+            .field__label {
+              display: none;
+            }
+            .field__item {
+              text-align: left;
+              display: inline-block;
+            }
+          }
+          .field--name-field-comment,
+          .field--name-field-comment-name {
+            font-family: $font-arial;
+            font-size: 15px;
+            color: $font-color;
+          }
+        }
+      }
+      form.comment-comments-with-fields-form {
+        h1 {
+          display: none;
+        }
+        .form-item-name {
+          display: none;
+        }
+        .field--name-field-your-rating {
+          label {
+            font-family: $font-arial;
+            font-size: 15px;
+            color: $font-color;
+          }
+        }
+        .form-textarea-wrapper {
+          textarea {
+            max-width: 570px;
+            min-height: 160px;
+            border-color: #e6e6e6;
+            font-size: 15px;
+            padding: 10px 0 0 10px;
+            &:focus {
+              outline: 1px solid #e6ae48;
+            }
+          }
+        }
+        .field--name-field-comment-name {
+          .form-item-field-comment-name-0-value {
+            input {
+              max-width: 310px;
+              height: 40px;
+              border: 1px solid #e6e6e6;
+              font-size: 15px;
+              padding-left: 10px;
+              &:focus {
+                outline: 1px solid #e6ae48;
+              }
+              @media screen and(max-width: $screen-xs-min) {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .field--name-field-email {
+          .form-item-field-email-0-value {
+            input {
+              max-width: 310px;
+              height: 40px;
+              border: 1px solid #e6e6e6;
+              font-size: 15px;
+              padding-left: 10px;
+              &:focus {
+                outline: 1px solid #e6ae48;
+              }
+              @media screen and(max-width: $screen-xs-min) {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .form-actions {
+          @include submit_button;
+        }
+      }
+    }
+  }
+  .third-block {
+    width: 100%;
+    .field--name-field-related-products {
+      .field__label {
+        margin: 0;
+        padding: 0 0 45px;
+        text-align: center;
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: normal;
+        color: $color-black;
+      }
+      .field__items {
+        display: block;
+        width: 100%;
+        .field__item {
+          display: inline-block;
+          width: 30%;
+          margin-right: 2%;
+          vertical-align: top;
+          .node--view-mode-teaser {
+            .field--name-field-furniture-image {
+              display: block;
+              width: 100%;
+            }
+            .field--name-field-categories {
+              padding-top: 10px;
+              position: relative;
+              overflow: hidden;
+              text-align: center;
+              .field__item {
+                a {
+                  color: #888888;
+                  text-decoration: none;
+                  font-size: 15px;
+                  line-height: 22px;
+                  &:hover {
+                    color: #e6ae48;
+                  }
+                }
+              }
+            }
+            h2 {
+              font-size: 18px;
+              line-height: 24px;
+              font-weight: normal;
+              color: $color-black;
+              text-align: center;
+              a {
+                transition: border-color .3s ease-in-out;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                  border-bottom: 1px solid #e6ae48;
+                }
+              }
+            }
+            .stars {
+              text-align: center;
+            }
+            .field--name-field-price {
+              font-size: 18px;
+              line-height: 24px;
+              display: block;
+              position: relative;
+              text-align: center;
+              margin: 0 auto;
+              color: #888888;
+              padding: 20px 0;
+            }
+          }
+          @media screen and (max-width: $screen-sm-min) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// Furniture teaser block: Related products
+  .node--view-mode-teaser {
+    position: initial;
+    .hover-block {
+      position: relative;
+      #carousel {
+        display: none;
+      }
+      #slider {
+        margin: 0;
+        ul {
+          position: relative;
+          li:first-child {
+            display: block;
+            width: 100%;
+            a {
+              img {
+                opacity: 1;
+              }
+            }
+          }
+          li {
+            display: none;
+            a {
+              img {
+                transition: opacity .3s ease-in-out;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+      .bar {
+        display: block;
+        position: absolute;
+        bottom: -100px;
+        opacity: 0;
+        width: 100%;
+        padding: 0 10px;
+        transition: opacity .3s ease-in-out, top .3s ease-in-out;
+        text-align: center;
+        .search-icon,
+        .like_dislike {
+          display: inline-block;
+          vertical-align: top;
+          padding-top: 10px;
+          width: 40px;
+          height: 40px;
+          background-color: white;
+          a {
+            vertical-align: baseline;
+            color: $color-black;
+            &:hover {
+              color: $color-orange;
+            }
+          }
+        }
+        .cart {
+          display: inline-block;
+          vertical-align: top;
+          background-color: white;
+          padding-top: 10px;
+          width: calc(100% - 90px);
+          margin: 0 auto;
+          height: 40px;
+          a {
+            white-space: nowrap;
+            vertical-align: baseline;
+            color: $color-black;
+            font-size: 16px;
+            text-decoration: none;
+            font-family: $font-karla;
+            &:hover {
+              color: $color-orange;
+            }
+          }
+        }
+      }
+      &:hover {
+        #slider {
+          ul {
+            li:last-child {
+              display: block;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              a {
+                img {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        .bar {
+          opacity: 1;
+          bottom: 10px;
+          @media screen and (max-width: $screen-lg-min) {
+
+          }
+        }
+      }
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-width: 1900px;
+      min-height: 1000px;
+      z-index: 500;
+      background: rgba(0, 0, 0, 0.5);
+      transition: opacity 200ms;
+      visibility: hidden;
+      opacity: 0;
+      &.light {
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .cancel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: default;
+      }
+      &:target {
+        visibility: visible;
+        opacity: 1;
+      }
+      .attachment {
+        margin: 75px auto;
+        padding: 30px;
+        background: #fff;
+        border: 1px solid #666;
+        width: 992px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        .close {
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          top: 7px;
+          right: 13px;
+          opacity: 0.8;
+          transition: all 200ms;
+          font-size: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: $font-color;
+          border: 1px solid #e6e6e6;
+          line-height: 1;
+          padding-left: 3px;
+          &:hover {
+            opacity: 1;
+            color: $color-orange;
+          }
+        }
+        .attach-wrap {
+          max-height: 350px;
+          overflow-y: scroll;
+          .popup-img {
+            display: inline-block;
+            width: 44%;
+            .search-image {
+              #carousel {
+                display: none;
+              }
+              #slider {
+                margin: 0;
+                ul {
+                  position: relative;
+                  li:first-child {
+                    display: block;
+                    width: 100%;
+                  }
+                  li {
+                    display: none;
+                  }
+                }
+              }
+            }
+            @media screen and (max-width: $screen-sm-min) {
+              width: 100%;
+              img {
+                margin: 0 auto;
+              }
+            }
+          }
+          .popup-text {
+            display: inline-block;
+            width: 54%;
+            vertical-align: top;
+            text-align: left;
+            padding: 0 5%;
+            .search-title {
+              h2 {
+                padding-bottom: 30px;
+                border-bottom: 1px solid #e6e6e6;
+                font-size: 28px;
+                line-height: 34px;
+                color: $color-black;
+                text-align: left;
+                a {
+                  pointer-events: none;
+                  cursor: default;
+                }
+              }
+            }
+            .search-price {
+              border-bottom: 1px solid #e6e6e6;
+              p {
+                margin: 0;
+              }
+              .field--name-field-price {
+                font-family: $font-karla;
+                color: $color-black;
+                font-size: 22px;
+                line-height: 28px;
+                text-align: left;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 20px;
+              }
+            }
+            .search-body {
+              border-bottom: 1px solid #e6e6e6;
+              p {
+                font-family: $font-arial;
+                color: $font-color;
+                font-size: 15px;
+                line-height: 22px;
+                margin-bottom: 25px;
+              }
+            }
+            .category {
+              p {
+                font-family: $font-arial;
+                color: $color-black;
+                display: inline-block;
+                vertical-align: top;
+                padding-right: 10px;
+                font-size: 15px;
+                line-height: 22px;
+              }
+              .field--name-field-categories {
+                display: inline;
+                vertical-align: top;
+                text-align: left;
+                .field__item {
+                  display: inline-block;
+                  vertical-align: top;
+                  padding-right: 10px;
+                  width: auto;
+                  margin-top: 14px;
+                  a {
+                    color: #9b9b9b;
+                    &:hover {
+                      color: $color-orange;
+                    }
+                  }
+                }
+              }
+            }
+            @media screen and (max-width: $screen-sm-min) {
+              width: 100%;
+            }
+          }
+
+        }
+        @media screen and (max-width: $screen-md-min) {
+          width: 90%;
+        }
+      }
+    }
+  }

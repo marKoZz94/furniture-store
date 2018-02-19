@@ -1,0 +1,196 @@
+<?php
+
+function furniture_theme_theme($existing, $type, $theme, $path)
+{
+    return [
+        'search_page' => [
+            'render element' => 'form',
+        ],
+        'furniture_list_page' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+function furniture_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    $http_error_suggestions = [
+        'system.401' => 'page__401',
+        'system.403' => 'page__403',
+        'system.404' => 'page__404',
+    ];
+    $node = \Drupal::request()->attributes->get('node');
+    if ($node) {
+        if ($node->id() == 49) {  // this is the node id linked to the 404 page
+            $suggestions[] = $http_error_suggestions['system.404'];
+        }
+    }
+}
+
+// Layout in case of using sidebar region
+
+function furniture_theme_preprocess_html(&$variables, $plugin, $configuration)
+{
+    // Add information about the number of sidebars.
+    if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'sidebar-both';
+    } elseif (!empty($variables['page']['sidebar_first'])) {
+        $variables['attributes']['class'][] = 'sidebar-first';
+    } elseif (!empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'sidebar-second';
+    } else {
+        $variables['attributes']['class'][] = 'sidebar-none';
+    }
+
+}
+
+// Register Form and Login Form
+function furniture_theme_form_alter(&$form, &$form_state, $form_id)
+{
+    // Register Form
+    if ($form_id === 'user_register_form') {
+        $form['user_picture']['#access'] = FALSE;
+        $form['contact']['#access'] = FALSE;
+        $form['timezone']['#access'] = FALSE;
+        $form['account']['name']['#description'] = FALSE;
+        $form['account']['mail']['#description'] = FALSE;
+        $form['actions']['submit']['#value'] = t('Register');
+    }
+    // Login Form
+    if ($form_id === 'user_login_form') {
+        $form['name']['#title'] = t('Username or email address');
+        $form['actions']['submit']['#value'] = t('Login');
+        $form['remember'] = array(
+            '#type' => 'checkbox',
+            '#title' => t('Remember me'),
+            '#value' => 0,
+        );
+    }
+    // Contact Form
+    if ($form_id == 'contact_message_feedback_form') {
+        $request = \Drupal::request();
+        $route_match = \Drupal::routeMatch();
+        $title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+        $form['title'] = array(
+            '#theme' => 'page_title',
+            '#title' => $title,
+            '#weight' => -1000,
+        );
+        $form['title']['#title'] = t('Let\'s Talk');
+        $form['actions']['submit']['#value'] = t('Send message');
+        $form['actions']['preview'] = FALSE;
+    }
+
+    // Leave a Reply Comments on Blog page
+    if ($form_id == 'comment_blog_comments_form') {
+        $request = \Drupal::request();
+        $route_match = \Drupal::routeMatch();
+        $title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+        $form['title'] = array(
+            '#theme' => 'page_title',
+            '#title' => $title,
+            '#weight' => -1000,
+        );
+        $form['title']['#title'] = t('Leave a Reply');
+        $form['actions']['submit']['#value'] = t('Add Comment');
+        $form['actions']['preview'] = FALSE;
+        $form['field_comment']['widget'][0]['value']['#title'] = t('Your email address will not be published.');
+        $form['field_b_name']['widget'][0]['value']['#title'] = FALSE;
+        $form['field_b_email']['widget'][0]['value']['#title'] = FALSE;
+    }
+    // Reviews on Furniture page
+    if ($form_id == 'comment_comments_with_fields_form') {
+
+//        var_dump($form['author']);
+        $request = \Drupal::request();
+        $route_match = \Drupal::routeMatch();
+        $title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+        $form['title'] = array(
+            '#theme' => 'page_title',
+            '#title' => $title,
+            '#weight' => -1000,
+        );
+        $form['title']['#title'] = t('Reviews');
+        $form['actions']['submit']['#value'] = t('Submit');
+        $form['actions']['preview'] = FALSE;
+        $form['field_comment']['widget'][0]['value']['#title'] = FALSE;
+        $form['field_comment_name']['widget'][0]['value']['#title'] = FALSE;
+        $form['field_email']['widget'][0]['value']['#title'] = FALSE;
+    }
+}
+
+// Placeholder for search block
+function furniture_theme_form_search_block_form_alter(&$form)
+{
+    $form['keys']['#attributes']['placeholder'] = t('Search for products');
+}
+
+function furniture_theme_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    $type = $node->getType();
+    switch($type) {
+        case 'furniture':
+                $comment_ids = [];
+                $ratings = [];
+
+                foreach ($variables['content']['field_reviews'][0]['comments'] as $key => $value) {
+                    if (is_int($key)) {
+                        $comment_ids[] = $key;
+                    }
+                }
+                $comments = Drupal\comment\Entity\Comment::loadMultiple($comment_ids);
+                foreach ($comments as $commment) {
+                    $rate = $commment->get('field_your_rating')->getValue('rating');
+                    if (isset($rate[0]['rating'])) {
+                        $ratings[] = $rate[0]['rating'];
+                    }
+                }
+                $rating = floatval(array_sum($ratings) / count($ratings));
+                $rating = round(($rating/20),0);
+
+                for($i=0;$i<5;$i++){
+                    if($i<$rating){
+                        $variables['content']['rating'][] = 'full';
+                    } else {
+                        $variables['content']['rating'][] = 'empty';
+                    }
+                }
+          break;
+        default:
+          return;
+    }
+
+    $a2a_block = \Drupal\block\Entity\Block::load('nextpreviousblogblock');
+    $a2a_block_view = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($a2a_block);
+    if ($a2a_block_view) {
+        $variables['prev_next_blog_1'] = $a2a_block_view;
+    }
+
+    $a2a_block = \Drupal\block\Entity\Block::load('nextpreviousportfolioblock');
+    $a2a_block_view = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($a2a_block);
+    if ($a2a_block_view) {
+        $variables['prev_next_portfolio'] = $a2a_block_view;
+    }
+
+    // Altering URLs for taxonomy term overview pages
+    $taxonomies = &$variables['content']['field_categories'];
+
+    foreach ($taxonomies as $key => &$taxonomy) {
+        if (is_integer($key)) {
+            if (isset($taxonomy['#type']) && $taxonomy['#type'] == 'link') {
+                $url = &$taxonomy['#url'];
+                $oldParams = $url->getRouteParameters();
+                if (!empty($oldParams['taxonomy_term'])) {
+                    $params = [
+                        'taxonomy' => $oldParams['taxonomy_term']
+                    ];
+                $url = \Drupal\Core\Url::fromRoute('furniture_list_page.search_form',$params );
+                }
+            }
+        }
+    }
+}

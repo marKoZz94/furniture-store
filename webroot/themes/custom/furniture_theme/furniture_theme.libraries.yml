@@ -1,0 +1,28 @@
+# Global CSS files
+global-css:
+  version: 1.x
+  css:
+    theme:
+      assets/stylesheets/application.css:
+        minified: false
+      assets/stylesheets/vendor/flexslider.css:
+              minified: false
+      assets/stylesheets/vendor/jquery-ui.css:
+                    minified: false
+
+# Global JS files
+global-js:
+  version: 1.x
+  js:
+    assets/scripts/application.js:
+      minified: false
+    assets/scripts/vendor/jquery.flexslider.js:
+          minified: false
+    assets/scripts/vendor/masonry-layout/dist/masonry.pkgd.min.js: {}
+    assets/scripts/vendor/jquery-ui.js:
+              minified: false
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

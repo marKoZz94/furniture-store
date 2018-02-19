@@ -1,0 +1,5 @@
+name: Search Page
+type: module
+description: Custom Search Page
+core: 8.x
+package: Custom

@@ -1,0 +1,6 @@
+name: Custom Block for Portfolio List Page
+description: Block for Portfolio List Page that appears in Portfolio
+package: Custom
+
+type: module
+core: 8.x

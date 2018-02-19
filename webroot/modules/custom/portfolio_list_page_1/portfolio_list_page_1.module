@@ -1,0 +1,13 @@
+<?php
+
+function portfolio_list_page_1_theme ( $existing, $type, $theme, $path ) {
+    return [
+        'portfolio_list_page_1' => array(
+            'template'  => 'portfolio_list_page_1',
+            'variables' => [
+                'content'  => [],
+            ],
+        ),
+
+    ];
+}

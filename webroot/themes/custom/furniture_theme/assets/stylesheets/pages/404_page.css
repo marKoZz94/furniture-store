@@ -1,0 +1,14 @@
+.error-page {
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 0 100px 0; }
+  .error-page h1 span {
+    font-size: 300px;
+    font-weight: 100;
+    color: #e6ae48; }
+  .error-page #block-furniture-content p {
+    font-size: 28px; }
+  .error-page #block-furniture-search #search-block-form a {
+    display: none; }
+
+/*# sourceMappingURL=../../stylesheets/pages/404_page.css.map */

@@ -1,0 +1,4 @@
+name: Subscribe
+type: module
+description: Defines a Subscribe custom block.
+core: 8.x

@@ -1,0 +1,129 @@
+<div class="top-wrapper">
+    <div class="filter">
+        {{ form.filters.sort }}
+        {{ form.filters.taxonomy }}
+    </div>
+    <div class="button">
+        {{ form.filters.actions.submit }}
+        <h2>Showing all {{ form.content.data.counters }} results</h2>
+    </div>
+</div>
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+<div class="row">
+    {% for key,entry in form.content.data %}
+        {% if key matches '/^\\d+$/' %}
+            <div class="col-search">
+                <div class="top-hover">
+                    <div class="block-fur-img">
+                        {% for en_key,en in entry.image %}
+                            {% if en_key matches '/^\\d+$/' %}
+
+                                <a href ="{{ en.nid }}"><img src="{{ en.img }}"/></a>
+
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {#Hover items#}
+
+                    <div class="bar">
+                        <div class="search-icon">
+                            <a href="#popup-{{ entry.id }}"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="cart">
+                            <a href="#">Add to Cart</a>
+                        </div>
+                        <div class="like_dislike">
+                            <div class="like">
+                                <a href={{ like_url }}><i class="fa fa-heart-o" aria-hidden="true"></i>
+                                </a>
+                                <span id="like">{{ entry.likes }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                {% for en_key,en in entry.taxonomy_name %}
+                    {% if en_key matches '/^\\d+$/' %}
+
+                        <div class="block-fur-term">
+                            <a href ="{{ en.url }}"><p>{{ en.name }}</p></a>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+
+                <div class="block-fur-title">
+                    <h2><a href ="{{ entry.nid }}">{{ entry.title }}</a></h2>
+                </div>
+
+                <div class = "stars">
+                    {% set counter = 0 %}
+                    {% for en in entry.rating %}
+                        {% set counter = counter + 1 %}
+                        <i class="fa fa-star" aria-hidden="true" style="color:gold"></i>
+                    {% endfor %}
+                    {#{{ counter }};#}
+                    {% set counter2 = 0 %}
+                    {% set counter2 = 5 - counter %}
+                    {% if counter2 > 0 %}
+                        {% for i in 1..counter2 %}
+                            <i class="fa fa-star-o" aria-hidden="true" style="color:darkgray"></i>
+                        {% endfor %}
+                    {% endif %}
+                    {#{{ counter2 }};#}
+                </div>
+
+                <div class="block-fur-price">
+                    <p>${{ entry.price }}</p>
+                </div>
+
+                {#When clicked on Search#}
+                <div id="popup-{{ entry.id }}" class="overlay">
+                    <div class="attachment" data-node-type="{{ entry.nid }}">
+                        <a class="close" href="#">&times;</a>
+                        <div class="attach-wrap">
+                        <div class="popup-img">
+                        {% for en_key,en in entry.image %}
+                            {% if en_key matches '/^\\d+$/' %}
+                                <div class="search-image">
+                                    <img src="{{ en.img }}">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                            <div class="popup-text">
+                        <div class="search-title">
+                            <h1>{{ entry.title }}</h1>
+                        </div>
+
+                        <div class="search-price">
+                            <p>${{ entry.price }}</p>
+                        </div>
+
+                        <div class="search-body">
+                            <p>{{ entry.body }}</p>
+                        </div>
+                                <div class="category">
+                                    <p>Categories:</p>
+                                    {% for en_key,en in entry.taxonomy_name %}
+                                        {% if en_key matches '/^\\d+$/' %}
+                                            <div class="search-term">
+                                                <a href ="{{ en.url }}"><p>{{ en.name }}</p></a>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{{ form.pager }}

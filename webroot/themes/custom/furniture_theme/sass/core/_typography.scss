@@ -1,0 +1,103 @@
+// ========================================
+//
+// @file _typography.scss
+// Base level typography, fonts, colors, sizes
+//
+// ========================================
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+@font-face {
+  font-family: 'nimbus_sans_lregular';
+  src: url('../../assets/stylesheets/fonts/nimbus-sans-l.regular-webfont.woff2') format('woff2'),
+  url('../../assets/stylesheets/fonts/nimbus-sans-l.regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'arialregular';
+  src: url('../../assets/stylesheets/fonts/arial-webfont.woff2') format('woff2'),
+  url('../../assets/stylesheets/fonts/arial-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+p {
+  font-size: $base-font-size;
+  line-height: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Karla', sans-serif;
+	&:last-child {
+	  margin-bottom: 0;
+	}
+}
+
+a {
+  transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  a {
+    color: inherit;
+
+    &:hover {
+    }
+  }
+}
+
+h1 {
+  @include rem('font-size', 26px);
+}
+
+h2 {
+  @include rem('font-size', 22px);
+}
+
+h3 {
+  @include rem('font-size', 20px);
+}
+
+h4 {
+  @include rem('font-size', 18px);
+}
+
+h5 {
+  @include rem('font-size', 18px);
+}
+
+h6 {
+  @include rem('font-size', 16px);
+}
+
+ul {
+
+  li {
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol {
+
+  li {
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-karla;
+  font-weight: 300;
+}

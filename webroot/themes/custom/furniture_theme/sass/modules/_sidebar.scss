@@ -1,0 +1,292 @@
+// ========================================
+//
+// @file sidebar.scss
+// Sidebar element on the page
+//
+// ========================================
+.search-block-form {
+  form {
+    height: 42px;
+    width: 245px;
+    padding: 4px 10px 9px 10px;
+    border: 1px solid #e6e6e6;
+    input[type="search"] {
+      font-family: $font-arial;
+      font-size: 14px;
+      line-height: 20px;
+      padding-top: 8px;
+      color: #888888;
+      border: none;
+      width: 70%;
+      &:focus {
+        outline: none;
+      }
+    }
+    .form-actions {
+      position: relative;
+      input {
+        display: inline-block;
+        width: 27%;
+        background-color: white;
+        color: white;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+      &::before {
+        display: block;
+        content: "\f002";
+        font-family: $font-awesome;
+        font-size: 16px;
+        color: #888888;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transition: transform(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+}
+#block-recentlyviewedproductsblock,
+#block-topratedproductsblock {
+  margin-top: 30px;
+  h2 {
+    font-family: $font-karla;
+    color: $color-black;
+    margin: 0 0 25px 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .wrap-fur-sidebar {
+    min-height: 50px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    .block-fur-img {
+      display: inline-block;
+      padding-right: 5%;
+      float: left;
+      height: 85px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    .block-fur-title {
+      a {
+        font-family: $font-karla;
+        color: $color-black;
+        font-size: 15px;
+        line-height: 20px;
+        font-style: normal;
+        text-decoration: none;
+        &:hover {
+          color: $color-orange;
+        }
+      }
+    }
+    .stars {
+      margin-top: 3px;
+    }
+    .block-fur-price {
+      p {
+        margin-top: 1px;
+      }
+    }
+  }
+}
+#block-latestfromblogblock {
+  margin-bottom: 30px;
+  h2 {
+    font-family: $font-karla;
+    color: $color-black;
+    margin: 0 0 25px 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    font-style: normal;
+  }
+  ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    li {
+      font-family: $font-karla;
+      font-size: 13px;
+      font-weight: normal;
+      font-style: normal;
+      background: none;
+      color: $color-black;
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 2%;
+      width: 30%;
+      cursor: pointer;
+      &.current {
+        border-bottom: 1px solid #e6ae48;
+      }
+      &:hover {
+        color: $color-orange;
+      }
+      @media screen and (max-width: $screen-md) {
+        padding-right: 0;
+      }
+    }
+  }
+  .tab-content {
+    display: none;
+    padding: 15px 0;
+    &.current {
+      display: inherit;
+    }
+    .wrap-blog-latest {
+      display: block;
+      min-height: 50px;
+      margin: 0 1px 20px;
+      overflow: hidden;
+      .block-blog-img {
+        display: inline-block;
+        padding-right: 4%;
+        height: 85px;
+        float: left;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+      .block-blog-title {
+        a {
+          font-family: $font-karla;
+          color: $color-black;
+          font-size: 15px;
+          line-height: 20px;
+          font-style: normal;
+          text-decoration: none;
+          &:hover {
+            color: $color-orange;
+          }
+        }
+      }
+      .block-blog-date {
+        p {
+          font-family: $font-arial;
+          color: #888888;
+          margin-top: 5px;
+          display: block;
+          font-size: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+    .wrap-comments {
+      display: block;
+      .block-blog-c-name {
+        p {
+          color: $color-orange;
+          font-weight: bold;
+          text-transform: lowercase;
+          font-size: 13px;
+          font-family: $font-arial;
+        }
+      }
+      .block-blog-title {
+        a {
+          font-size: 15px;
+          line-height: 20px;
+          text-decoration: none;
+          font-family: $font-karla;
+          color: $color-black;
+          &:hover {
+            color: $color-orange;
+          }
+        }
+      }
+      .block-blog-commment {
+        text-overflow: ellipsis;
+        p {
+          font-family: $font-arial;
+          color: #888888;
+          font-size: 13px;
+        }
+      }
+    }
+    @media screen and (max-width: $screen-md) {
+      padding-top: 30px;
+    }
+  }
+}
+.block-range-filter {
+  margin: 25px 0;
+  form {
+    .range {
+      margin-bottom: 30px;
+      p {
+        label {
+          font-family: $font-karla;
+          font-size: 18px;
+          line-height: 24px;
+          color: $color-black;
+        }
+      }
+      .ui-slider {
+        height: 2px;
+        border: none;
+        background-color: #e6e6e6;
+        .ui-slider-range {
+          background-color: $color-orange;
+          border: none;
+        }
+        .ui-slider-handle {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $color-black;
+          top: -4px!important;
+          margin-left: 0;
+          cursor: pointer;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .form-item-min-price,
+      .form-item-max-price {
+        display: none;
+      }
+    }
+    p.price {
+      display: inline-block;
+      width: 55%;
+      font-family: $font-arial;
+      font-size: 14px;
+      color: $color-black;
+      input {
+        border: none;
+        width: 90px;
+        padding-left: 10px;
+        color: $color-orange;
+        font-family: $font-arial;
+        font-size: 14px;
+      }
+    }
+    .button {
+      display: inline-block;
+      margin: 0 auto;
+      @include submit_button;
+      input {
+        width: 95px;
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+}

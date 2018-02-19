@@ -1,0 +1,27 @@
+{% for entry in content %}
+    <div class="wrap-fur-sidebar">
+        <div class="block-fur-img">
+            <a href ="{{ entry.alias }}"><img src="{{ entry.image }}"/></a>
+        </div>
+
+        <div class="block-fur-title">
+            <a href ="{{ entry.alias }}">{{ entry.title }}</a>
+        </div>
+
+        <div class = "stars">
+            {% for star in entry.star %}
+                {% if star == 'full' %}
+                    <i class="fa fa-star" aria-hidden="true" style="color:gold"></i>
+                {% else  %}
+                    <i class="fa fa-star-o" aria-hidden="true" style="color:darkgray"></i>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="block-fur-price">
+            <p>${{ entry.field_price_value }}</p>
+        </div>
+    </div>
+
+
+{% endfor %}
